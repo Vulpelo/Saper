@@ -38,12 +38,12 @@ class Saper:
         self._view.map.new(self._map_height, self._map_width, self._mines)
         self.drawGameMap()
         self._view.menu.newGameStart()
-        self._clearedPlaces = 0
         self._firstGameLunch = True
 
     def newGame(self):
         self._markedMines = 0
         self._correctMarkedMines = 0
+        self._clearedPlaces = 0
         self._gameEnded = False
         try:
             self.getAndSetEnteredData()
@@ -56,6 +56,7 @@ class Saper:
         if self._firstGameLunch:
             self._markedMines = 0
             self._correctMarkedMines = 0
+            self._clearedPlaces = 0
             self._gameEnded = False
             for i in range(self._map_height):
                 for j in range(self._map_width):
